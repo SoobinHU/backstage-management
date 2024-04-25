@@ -5,7 +5,9 @@
         <CommonAside/>
       </el-aside>
       <el-container>
-        <el-header>Header</el-header>
+        <el-header>
+          <CommonHeader/>
+        </el-header>
         <el-main>
           <!-- 路由出口 -->
           <!-- 路由匹配的组件渲染到这里 -->
@@ -18,7 +20,7 @@
 
 <script>
 import CommonAside from '@/components/CommonAside.vue'
-
+import CommonHeader from '@/components/CommonHeader.vue'
 export default {
     name:'Main',
     data() {
@@ -27,7 +29,8 @@ export default {
         }
     },
     components:{
-      CommonAside
+      CommonAside,
+      CommonHeader
     }
 }
 </script>
@@ -36,5 +39,8 @@ export default {
 .el-aside {
   /* 消除滚动条 */
   overflow: hidden;
+}
+.el-header {
+  padding: 0;
 }
 </style>
