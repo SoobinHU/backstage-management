@@ -9,7 +9,8 @@
     text-color="#fff"
     active-text-color="#ffd04b"
   >
-    <h3>通用后台管理系统</h3>
+  <!-- 展开时显示全名，收起时只展示‘后台’ -->
+    <h3>{{isCollapse ? '后台' : '通用后台管理系统'}}</h3>
     <el-menu-item @click="clickMenu(item)" v-for="item in noChildren" :key="item.name" :index="item.name">
                                                                     <!-- index为选项的索引标识 -->
         <!-- 图标 -->
@@ -36,6 +37,7 @@
 .el-menu {
     // vh : 相对于视口的高度， 1vh 等于视口高度的1%（总视口高度为100vh）
     height: 100vh;
+    border-right: none;
     h3 {
         color: #fff;
         text-align: center;
@@ -51,7 +53,6 @@ export default {
   data() {
     return {
       //控制导航栏是否展开
-      isCollapse: false,
       menuData: [
         {
           path: "/",
@@ -124,6 +125,10 @@ export default {
     //没有下拉子菜单
     noChildren(){
         return this.menuData.filter((item)=> !item.children)
+    },
+    //asideStore中拿来的数据
+    isCollapse(){
+      return this.$store.state.asideStore.isCollapse
     }
   }
 };

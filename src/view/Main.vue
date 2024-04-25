@@ -1,7 +1,8 @@
 <template>
   <div>
     <el-container>
-      <el-aside width="200px">
+      <!-- width自适应以免出现侧边收起后 衔接不起来的问题 -->
+      <el-aside width="auto">
         <CommonAside/>
       </el-aside>
       <el-container>
