@@ -36,7 +36,7 @@
 }
 .el-menu {
     // vh : 相对于视口的高度， 1vh 等于视口高度的1%（总视口高度为100vh）
-    height: 100vh;
+    height: 100%;
     border-right: none;
     h3 {
         color: #fff;
