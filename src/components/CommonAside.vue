@@ -115,6 +115,7 @@ export default {
         if(this.$route.path !== item.path && !(this.$route.path === '/home' && (item.path ==='/'))){
              this.$router.push(item.path)
         }
+        this.$store.dispatch('selectMenu',item)
     }
   },
   computed:{
@@ -128,7 +129,7 @@ export default {
     },
     //asideStore中拿来的数据
     isCollapse(){
-      return this.$store.state.asideStore.isCollapse
+      return this.$store.state.tab.isCollapse
     }
   }
 };

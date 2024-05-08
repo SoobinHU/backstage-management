@@ -9,6 +9,7 @@
         <el-header>
           <CommonHeader/>
         </el-header>
+        <CommonTabs/>
         <el-main>
           <!-- 路由出口 -->
           <!-- 路由匹配的组件渲染到这里 -->
@@ -22,6 +23,7 @@
 <script>
 import CommonAside from '@/components/CommonAside.vue'
 import CommonHeader from '@/components/CommonHeader.vue'
+import CommonTabs from '@/components/CommonTabs.vue'
 export default {
     name:'Main',
     data() {
@@ -31,7 +33,8 @@ export default {
     },
     components:{
       CommonAside,
-      CommonHeader
+      CommonHeader,
+      CommonTabs
     }
 }
 </script>

@@ -18,7 +18,4 @@ new Vue({
   store,
   render: h => h(App),
 }).$mount('#app')
-// 以80%定义浏览器默认75%的比例缩放
-window.onload=function(){
-  document.body.style.zoom="70%";
-}
+

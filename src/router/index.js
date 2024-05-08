@@ -22,29 +22,39 @@ Vue.use(VueRouter)
             children:[
                 {//首页
                     path:'home',
+                    name:'home',
                     component:Home
                 },
                 {//用户管理
                     path:'user',
+                    name:'user',
                     component:User
                 },
                 {//商品管理
                     path:'mall',
+                    name:'mall',
                     component:Mall
                 },
                 {//页面一
                     path:'page1',
+                    name:'page1',
                     component:PageOne
                 },
                 {//页面二
                     path:'page2',
+                    name:'page2',
                     component:PageTwo
                 },
             ]
         },    
     ]
  })
-
+// 解决 Vue 路由传递参数时，出现 Uncaught (in promise) NavigationDuplicated: Avoided redundant navigation 问题 .
+//添加以下代码
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
  //暴露路由
  export default router
 

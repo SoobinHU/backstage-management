@@ -126,7 +126,7 @@ export default {
       var echarts1Option = {};
       // 处理数据xAxis X轴
       const { orderData, userData,videoData } = data.data;
-      console.log(orderData)
+      // console.log(orderData)
       //X轴坐标
       echarts1Option.xAxis = {
         data:orderData.date
