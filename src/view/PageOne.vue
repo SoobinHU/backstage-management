@@ -1,5 +1,5 @@
 <template>
-  <h1>我是PageOne</h1>
+  <div class="pageOne">我是PageOne</div>
 </template>
 
 <script>
@@ -14,5 +14,7 @@ export default {
 </script>
 
 <style>
-
+.pageOne{
+  height: 678px;
+}
 </style>

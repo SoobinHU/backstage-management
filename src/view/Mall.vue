@@ -1,5 +1,5 @@
 <template>
-  <h1>我是Mall</h1>
+  <div class="mall">我是Mall</div>
 </template>
 
 <script>
@@ -14,5 +14,7 @@ export default {
 </script>
 
 <style>
-
+.mall{
+  height: 678px;
+}
 </style>
