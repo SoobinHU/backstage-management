@@ -18,13 +18,13 @@
     </div>
     <!-- 右侧 -->
     <div class="r-content">
-      <el-dropdown>
+      <el-dropdown @command='handleClick'>
         <span class="el-dropdown-link">
           <img class="user" src="../assets/images/user.png" alt="" />
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>个人中心</el-dropdown-item>
-          <el-dropdown-item>退出</el-dropdown-item>
+          <el-dropdown-item command="logout">退出</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -32,11 +32,23 @@
 </template>
 
 <script>
+import Cookie from 'js-cookie';
 export default {
   name: "CommonHeader",
   methods: {
     handleMenu() {
       this.$store.commit("collapseMenu");
+    },
+    handleClick(command){
+      if(command == 'logout'){
+        //登出操作
+        //清除token
+        Cookie.remove('token')
+        //清除menu
+        Cookie.remove('menu')
+        //跳转到登录页面
+        this.$router.push('/login')
+      }
     },
   },
 };
